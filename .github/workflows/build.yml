@@ -1,13 +1,18 @@
-# With some help from: https://gist.github.com/dgerosa/2e1f47a39180f39bde848e38243efa94
+# Build and Deploy CV to GitHub Pages
+name: Build and Deploy CV
 
-name: build
-on: [push]
-
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: write 
+  pages: write
+  id-token: write
 
-  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,14 +23,20 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: cv
+        
+      - name: Compile LaTeX CV
         uses: dante-ev/latex-action@latest
         with:
           root_file: ${{ env.FILE }}
           working_directory: ${{ env.DIR }}
-      - name: move
-        run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
-      - name: Upload pdf as artifact
+          
+      - name: Prepare artifacts
+        run: |
+          mkdir -p github_artifacts
+          cp ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
+          cp index.html ./github_artifacts/
+          
+      - name: Upload PDF as artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.FILE }}.pdf
@@ -33,21 +44,36 @@ jobs:
   deploy:
     needs: [build]
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+        
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
         with:
           path: github_artifacts
-      - name: move
-        run: mkdir -p github_deploy && mv github_artifacts/*/* github_deploy
-      - name: deploy on orphan branch
+          
+      - name: Prepare deployment files
+        run: |
+          mkdir -p github_deploy
+          mv github_artifacts/*/* github_deploy
+          # Ensure index.html is present
+          if [ ! -f github_deploy/index.html ]; then
+            cp index.html github_deploy/
+          fi
+          ls -la github_deploy/
+          
+      - name: Deploy to GitHub Pages (build branch)
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_deploy
           publish_branch: build
           force_orphan: true
+          commit_message: 'Deploy CV: ${{ github.sha }}'
           enable_jekyll: true
   copy-index-to-build:
     needs: [deploy]
