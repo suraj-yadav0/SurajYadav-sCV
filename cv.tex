@@ -20,344 +20,285 @@
 %
 %-----------------------------------------------------------------------------------------------------------------------------------------------%
 
-%----------------------------------------------------------------------------------------
-%	DOCUMENT DEFINITION
-%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
 
-% article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
-
-%----------------------------------------------------------------------------------------
-%	FONT
-%----------------------------------------------------------------------------------------
-
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES
-%----------------------------------------------------------------------------------------
-\usepackage{url}
-\usepackage{parskip} 	
-
-%other packages for formatting
-\RequirePackage{color}
-\RequirePackage{graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
-
-%tabularx environment
-\usepackage{tabularx}
-
-%for lists within experience section
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
-
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
-\usepackage{supertabular}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
 \usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
-\usepackage{titlesec}				
-\usepackage{multicol}
-\usepackage{multirow}
-
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
-
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
-\usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\setlength\bibitemsep{1em}
-
-%for social icons
 \usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
 
-%debug page outer frames
-%\usepackage{showframe}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-% job listing environments
-\newenvironment{jobshort}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    }
-    {
-    }
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
 
-\newenvironment{joblong}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    }
-    {
-    \end{itemize}
-    \end{minipage}    
-    }
+\urlstyle{same}
 
-%----------------------------------------------------------------------------------------
-%	BEGIN DOCUMENT
-%----------------------------------------------------------------------------------------
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
 \begin{document}
 
-% non-numbered pages
-\pagestyle{empty} 
+\begin{center}
+    {\Huge \scshape Suraj Yadav} \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faMobile\ +91-7986068817 ~ 
+    \href{mailto:surajyadav200701@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  surajyadav200701@gmail.com} ~ 
+    \href{https://github.com/suraj-yadav0}{\raisebox{-0.2\height}\faGithub\ suraj-yadav0} ~
+    \href{https://suraj-yadav0.github.io/portfolio-v3/}{\raisebox{-0.2\height}\faGlobe\ Portfolio}
+    \vspace{-8pt}
+\end{center}
 
-%----------------------------------------------------------------------------------------
-%	TITLE
-%----------------------------------------------------------------------------------------
-
-\begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Suraj Yadav} \\[7.5pt]
-\href{https://github.com/suraj-yadav0}{\raisebox{-0.05\height}\faGithub\ suraj-yadav0} \ $|$ \ 
-\href{https://www.linkedin.com/in/suraj-yadav-a63b3b220/}{\raisebox{-0.05\height}\faLinkedin\ suraj-yadav-a63b3b220} \ $|$ \ 
-\href{https://suraj-yadav-second-portfolio.vercel.app/}{\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \ 
-\href{mailto:surajyadav200701@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ surajyadav200701@gmail.com} \ $|$ \ 
-\href{tel:+917986068817}{\raisebox{-0.05\height}\faMobile \ +91-7986068817} \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-% PROFESSIONAL SUMMARY
-%----------------------------------------------------------------------------------------
-
-\section{Professional Summary}
-Passionate Jr. Software Engineer specializing in Ubuntu Touch development with expertise in QML, Python, and JavaScript. Experienced in building cross-platform mobile applications, open-source contributions, and project management solutions. Strong background in Flutter development with proven track record of improving app performance and user engagement. Committed to open-source development with 100+ pull requests and active participation in developer communities.
-
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
-
-\section{Work Experience}
-
-\begin{joblong}{Jr. Software Engineer - CALIN Global Services Pvt. Ltd.}{Aug 2024 - Present}
-\item Ubuntu Touch Developer specializing in QML, Python, and JavaScript for mobile application development on Ubuntu Touch platform
-\item Developing a comprehensive Time Management application with Odoo backend integration supporting timesheets, activities, tasks, project updates, and multi-instance Odoo management
-\item Contributing to the creation of Ubuntu Touch Development Course curriculum and training materials for organizational skill development
-\item Building Reddit Client for Ubuntu Touch as a side project, demonstrating expertise in native Ubuntu Touch application development
-\item Implementing advanced features including project management workflows, user authentication, and real-time data synchronization
-\item Collaborating with cross-functional teams to deliver high-quality software solutions using Agile methodologies
-\end{joblong}
-
-\begin{joblong}{App Developer Intern - NotAtMrp}{April 2024 - Aug 2024}
-\item Built over 60\% of the user interface for both the retail app and the NotAtMrp consumer app using Flutter and Dart frameworks
-\item Engineered a high-performance frontend leading to a 35\% surge in user engagement and trimming bounce rate by 25\% within three months
-\item Conducted thorough performance analysis using profiling tools to identify and eliminate bottlenecks in backend processes, leading to a 30\% improvement in app speed and a 20\% reduction in server response time
-\item Implemented GetX for state management to improve code efficiency, resulting in a 70\% reduction in user waiting time
-\item Collaborated with backend developers to integrate RESTful APIs and ensure seamless data flow between frontend and backend systems
-\item Participated in code reviews and maintained high coding standards throughout the development lifecycle
-\end{joblong}
-
-\begin{joblong}{Flutter Intern - Sculpt}{Oct 2023 - Jan 2024}
-\item Engineered the UI/UX design of a mobile application through coding of error-free scripts, enhancing the user experience and achieving a 30\% decrease in user complaints and a 20\% improvement in app ratings
-\item Partnered with 2 Flutter interns and a senior developer, implementing innovative solutions that achieved a 25\% increase in app performance and accelerated project completion by 10\% ahead of schedule
-\item Gained hands-on experience with Flutter framework, Dart programming language, and mobile app development best practices
-\item Contributed to design discussions and provided input on user experience improvements
-\end{joblong}
-
-%----------------------------------------------------------------------------------------
-% CURRENT PROJECTS
-%----------------------------------------------------------------------------------------
-
-\section{Current Projects}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Time Management App for Ubuntu Touch} & \hfill \textbf{Aug 2024 - Present} \\[3.75pt]
-\textit{Technologies: QML, Python, Odoo, Ubuntu Touch, JavaScript, SQL}\\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-\item Comprehensive project management solution designed specifically for Ubuntu Touch platform with seamless Odoo backend integration
-\item Features include timesheets creation, activity tracking, task management, project updates, and support for multiple Odoo server instances
-\item Implemented secure user authentication, real-time data synchronization, and intuitive QML-based user interface optimized for touch interactions
-\item Designed scalable architecture to handle multiple projects and team collaborations with efficient data management
-\item Currently in active development with regular feature updates and performance optimizations
-\end{itemize}
-}  \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Reddit Client for Ubuntu Touch} & \hfill \textbf{Sep 2024 - Present} \\[3.75pt]
-\textit{Technologies: QML, Python, JavaScript, Ubuntu Touch, Reddit API}\\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-\item Native Reddit client application designed specifically for Ubuntu Touch platform with focus on mobile-first user experience
-\item Implementing comprehensive Reddit API integration including post browsing, comment threading, media support, and offline reading capabilities
-\item Developing touch-optimized UI/UX design with smooth navigation, gesture controls, and performance optimization for mobile devices
-\item Features include user authentication, subreddit management, post voting, comment interactions, and media viewing
-\item Focusing on creating an intuitive and responsive interface that leverages Ubuntu Touch's unique capabilities
-\end{itemize}
-}  \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-% PREVIOUS PROJECTS
-%----------------------------------------------------------------------------------------
-
-\section{Previous Open Source Projects}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Vyakhya AI} & \hfill \href{https://suraj-yadav0.github.io/vyakhya_ai-main/}{Live Project} \\[3.75pt]
-\textit{Technologies: Flutter, Google ML Kit, Python, Firebase} & \hfill \textbf{Jan 2024 - April 2024} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-\item Leveraged Google's ML Kit and gallery picker to translate images into text, enabling rapid processing of up to 1000 images per hour with 98\% accuracy
-\item Implemented real-time language translation across 500+ languages using advanced machine learning algorithms
-\item Contributed 10+ Pull/Merge Requests and implemented core features including batch processing, multi-language support, and cloud synchronization
-\item Designed user-friendly interface for seamless image selection, text extraction, and translation workflow
-\item Achieved high performance optimization resulting in fast processing times and minimal resource usage
-\end{itemize}
-}  \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{AI Assistant} & \hfill \href{https://github.com/suraj-yadav0/ai_assistent}{GitHub Repository} \\[3.75pt]
-\textit{Technologies: GPT API, Flutter, Lexica, Hive, Git} & \hfill \textbf{Nov 2023 - Jan 2024} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-\item Created a comprehensive AI Assistant using Flutter and integrated ChatGPT's API for intelligent chatbot interactions and text-to-image creation capabilities
-\item Achieved a 40\% decrease in query resolution time through optimized API integration and efficient response handling
-\item Authored and merged 15+ Pull Requests to add advanced features like multi-language support, conversation history, and optimized data storage using Hive database
-\item Implemented user-friendly interface with voice input, text formatting, and image generation features
-\item Designed efficient caching mechanism to reduce API calls and improve response times
-\end{itemize}
-}  \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-% ADDITIONAL PROJECTS
-%----------------------------------------------------------------------------------------
-
-\section{Additional Open Source Projects}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Wallter - Wallpaper Application} & \hfill \href{https://wallter.vercel.app/}{Live Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Modern wallpaper application with curated collections, search functionality, and high-quality image downloads. Built with responsive design and optimized performance.}  \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Apni Dukan - E-commerce Platform} & \hfill \href{https://github.com/suraj-yadav0/apna_kiryana}{GitHub Repository} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Complete e-commerce solution for local businesses with inventory management, order processing, and customer management features.}  \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{WorkItOut - Fitness Tracking App} & \hfill \href{https://github.com/suraj-yadav0/work_it_out}{GitHub Repository} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Comprehensive fitness tracking application with workout planning, progress monitoring, and social features for fitness enthusiasts.}  \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{CaptionIt - Social Media Tool} & \hfill \href{https://github.com/suraj-yadav0/caption_it}{GitHub Repository} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{AI-powered caption generation tool for social media posts with hashtag suggestions and content optimization features.}  \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Nimbus - Weather Application} & \hfill \href{https://github.com/suraj-yadav0/nimbus}{GitHub Repository} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Advanced weather forecasting application with detailed meteorological data, location-based services, and intuitive user interface.}  \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Vihan - Communication Platform} & \hfill \href{https://github.com/suraj-yadav0/vihan}{GitHub Repository} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Real-time communication platform with messaging, voice calls, and collaboration features for team productivity.}  \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2021 - 2025 & \textbf{Bachelor of Technology in Computer Science} \\
-& Chandigarh Engineering College, Jhanjeri, Mohali \\
-& CGPA: 8.8/10.0 \\
-& \textit{Relevant Coursework: Data Structures \& Algorithms, Software Engineering, Database Management Systems, Operating Systems, Computer Networks, Mobile Application Development} \\
-\end{tabularx}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Chandigarh Engineering College}{Mohali, India}
+      {Bachelor of Technology in Computer Science -- CGPA: 8.52/10.0}{2021 -- 2025}
+      \resumeItemListStart
+        \resumeItem{Relevant Coursework: Data Structures and Algorithms, Software Engineering, Database Management Systems, Operating Systems, Computer Networks, Mobile Application Development}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
-%----------------------------------------------------------------------------------------
-%	TECHNICAL SKILLS
-%----------------------------------------------------------------------------------------
 \section{Technical Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-\textbf{Programming Languages} & QML, Python, JavaScript, Java, Kotlin, C/C++, SQL, HTML/CSS, Dart \\
-\textbf{Frameworks \& Technologies} & Ubuntu Touch, Odoo, Flutter, Android Development, Firebase, Node.js, MongoDB, Express.js, WordPress, Material-UI, React \\
-\textbf{Developer Tools} & Linux/Ubuntu, Git, VS Code, Jenkins, Docker, IntelliJ IDEA, Android Studio, RESTful APIs, Postman \\
-\textbf{Databases} & MongoDB, MySQL, SQLite, Hive, Firebase Firestore \\
-\textbf{Cloud \& DevOps} & Firebase, Docker, Jenkins, Git/GitHub, Continuous Integration/Continuous Deployment (CI/CD) \\
-\textbf{Methodologies} & Agile Development, Scrum, Test-Driven Development (TDD), Open Source Development, Code Review \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	CERTIFICATIONS
-%----------------------------------------------------------------------------------------
-\section{Certifications}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-2025 & \textbf{Open Source Best Practices} - Calin Global Services Pvt. Ltd. \\
-& \textit{Comprehensive training on open source development methodologies, community contribution, and best practices for collaborative software development} \\
-
-2023 & \textbf{Flutter \& Dart - The Complete Guide} - Udemy \\
-& \textit{Advanced certification covering Flutter framework, Dart programming, state management, API integration, and mobile app deployment} \\
-
-2022 & \textbf{Web Design \& Development} - Online Certification \\
-& \textit{Full-stack web development including HTML5, CSS3, JavaScript, responsive design, and modern web frameworks} \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	ACHIEVEMENTS & RECOGNITION
-%----------------------------------------------------------------------------------------
-\section{Achievements \& Recognition}
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-\item \textbf{Competitive Programming Excellence:} Solved 1100+ Data Structure and Algorithm problems across multiple platforms while maintaining a consistent 650+ day coding streak, demonstrating dedication to continuous learning and problem-solving skills
-\item \textbf{Open Source Contributions:} Contributed to 10+ open source projects with 100+ successful Pull/Merge Requests and maintained a 150+ days GitHub contribution streak, showcasing commitment to collaborative development
-\item \textbf{Hackathon Success:} Achieved Grand Finalist status in Smart India Hackathon (SIH) and won 2 institute-level hackathons, demonstrating innovation and teamwork capabilities
-\item \textbf{Professional Certification:} Ubuntu Touch Developer certified by Calin Global Services, validating expertise in specialized mobile development platform
-\item \textbf{Technical Leadership:} Led development initiatives in D4 Community as Developer Lead, mentoring junior developers and fostering collaborative team environments
-\item \textbf{Educational Contribution:} Actively contributed to creating Ubuntu Touch Development Course curriculum, sharing knowledge and expertise with the developer community
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: Python, JavaScript, QML, Dart, Java, Kotlin, C, C++, SQL, HTML, CSS} \\
+     \textbf{Frameworks and Libraries}{: Flutter, Ubuntu Touch, Android, React, Node.js, Express.js, Firebase, Material-UI, GetX} \\
+     \textbf{Databases}{: MongoDB, MySQL, SQLite, Firebase Firestore, Hive, Odoo} \\
+     \textbf{Developer Tools}{: Git, GitHub, Docker, Jenkins, VS Code, Android Studio, IntelliJ IDEA, Linux, Ubuntu, Postman, RESTful APIs, WordPress} \\
+     \textbf{Methodologies}{: Agile Development, Scrum, Test-Driven Development, CI/CD, Code Review, Open Source Development}
+    }}
 \end{itemize}
+\vspace{-16pt}
 
-%----------------------------------------------------------------------------------------
-%	POSITIONS OF RESPONSIBILITY
-%----------------------------------------------------------------------------------------
-\section{Leadership \& Community Involvement}
+\section{Professional Experience}
+  \resumeSubHeadingListStart
 
-\begin{joblong}{Developer Lead - D4 Community}{Ongoing}
-\item Led a team of junior developers in various software development projects, providing mentorship, code reviews, and technical guidance
-\item Fostered a collaborative and high-performance team environment through regular knowledge sharing sessions and pair programming initiatives
-\item Contributed significantly to the creation of Ubuntu Touch Development Course curriculum, helping to establish comprehensive learning materials for new developers
-\item Organized and facilitated technical workshops and coding bootcamps for community members
-\item Maintained active engagement in open source communities, promoting best practices and collaborative development approaches
-\end{joblong}
+    \resumeSubheading
+      {Junior Software Engineer}{March 2025 -- Present}
+      {CALIN Global Services India PVT LTD}{Remote}
+      \resumeItemListStart
+        \resumeItem{Developed mobile applications for Ubuntu Touch platform using QML, Python, and JavaScript to create cross-platform software solutions for enterprise clients}
+        \resumeItem{Built Time Management application with Odoo backend integration by implementing RESTful APIs and database synchronization to enable timesheet tracking, task management, and project updates across multiple server instances}
+        \resumeItem{Created Ubuntu Touch Development Course curriculum by designing training modules and documentation to train development teams on QML application development and best practices}
+        \resumeItem{Engineered Reddit Client application using Python and QML by integrating Reddit API and designing touch-optimized interfaces to provide native mobile experience for Ubuntu Touch users}
+        \resumeItem{Implemented user authentication systems using OAuth and JWT tokens by developing secure login workflows to protect user data and maintain session management}
+        \resumeItem{Collaborated with cross-functional teams using Agile methodologies by participating in daily standups and sprint planning to deliver software features on schedule}
+      \resumeItemListEnd
 
-%----------------------------------------------------------------------------------------
-%	CODING PROFILES & ONLINE PRESENCE
-%----------------------------------------------------------------------------------------
-\section{Coding Profiles \& Online Presence}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-\textbf{GitHub} & \href{https://github.com/suraj-yadav0}{github.com/suraj-yadav0} - 150+ day contribution streak, 10+ repositories, 100+ contributions \\
-\textbf{LeetCode} & \href{https://leetcode.com/u/Suraj_Yadav07/}{leetcode.com/u/Suraj\_Yadav07} - 1100+ problems solved, consistent daily practice \\
-\textbf{HackerRank} & \href{https://www.hackerrank.com/profile/_2129753}{hackerrank.com/profile/\_2129753} - Multiple certifications in algorithms and data structures \\
-\textbf{GeeksforGeeks} & \href{https://www.geeksforgeeks.org/user/0surajyadav0/}{geeksforgeeks.org/user/0surajyadav0} - Active contributor with coding solutions and articles \\
-\textbf{LinkedIn} & \href{https://www.linkedin.com/in/suraj-yadav-a63b3b220/}{linkedin.com/in/suraj-yadav-a63b3b220} - Professional networking and industry updates \\
-\textbf{Portfolio} & \href{https://suraj-yadav-second-portfolio.vercel.app/}{suraj-yadav-second-portfolio.vercel.app} - Comprehensive showcase of projects and achievements \\
-\end{tabularx}
+    \resumeSubheading
+      {App Developer Intern}{April 2024 -- August 2024}
+      {NotAtMrp}{Remote}
+      \resumeItemListStart
+        \resumeItem{Developed user interfaces for retail and consumer applications using Flutter and Dart by implementing responsive design patterns to create mobile experiences for e-commerce platform}
+        \resumeItem{Increased user engagement by 35 percent and reduced bounce rate by 25 percent by optimizing frontend performance and implementing GetX state management to improve application responsiveness}
+        \resumeItem{Improved app speed by 30 percent and reduced server response time by 20 percent by conducting performance profiling and eliminating backend bottlenecks to enhance user experience}
+        \resumeItem{Reduced user waiting time by 70 percent by implementing GetX state management library and optimizing data flow to improve code efficiency and application performance}
+        \resumeItem{Participated in code reviews by following coding standards and best practices to maintain high-quality codebase throughout development lifecycle}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Flutter Development Intern}{October 2023 -- January 2024}
+      {Sculpt}{Remote}
+      \resumeItemListStart
+        \resumeItem{Designed and implemented mobile application UI/UX using Flutter framework and Dart programming by creating error-free scripts to deliver intuitive user experiences}
+        \resumeItem{Decreased user complaints by 30 percent and improved app ratings by 20 percent by engineering responsive interfaces and implementing user feedback to enhance application usability}
+        \resumeItem{Increased app performance by 25 percent and accelerated project completion by 10 percent by collaborating with development team and implementing innovative solutions to meet project deadlines}
+        \resumeItem{Gained expertise in Flutter framework and Dart programming by developing mobile applications and following best practices to build production-ready software}
+      \resumeItemListEnd
+    
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+\section{Projects}
+    \resumeSubHeadingListStart
+    
+      \resumeProjectHeading
+          {\textbf{Time Management App for Ubuntu Touch} $|$ \emph{QML, Python, Odoo, JavaScript, SQL}}{March 2025 -- Present}
+          \resumeItemListStart
+            \resumeItem{Built comprehensive project management application for Ubuntu Touch by integrating Odoo backend and implementing QML interfaces to enable timesheet creation, activity tracking, and task management}
+            \resumeItem{Implemented secure user authentication and real-time data synchronization by using OAuth protocols and WebSocket connections to provide seamless multi-instance Odoo server support}
+            \resumeItem{Designed scalable architecture using Python backend and SQL database by creating modular code structure to handle multiple projects and team collaborations efficiently}
+          \resumeItemListEnd
+          \vspace{-13pt}
+
+      \resumeProjectHeading
+          {\textbf{Reddit Client for Ubuntu Touch} $|$ \emph{QML, Python, JavaScript, Reddit API}}{August 2025 -- Present}
+          \resumeItemListStart
+            \resumeItem{Developed native Reddit client application for Ubuntu Touch by integrating Reddit API and implementing QML interfaces to provide mobile-first user experience with post browsing and comment threading}
+            \resumeItem{Implemented touch-optimized UI/UX design by creating gesture controls and smooth navigation to enhance user experience on mobile devices}
+            \resumeItem{Built features including user authentication, subreddit management, post voting, and media viewing by using Python backend and QML frontend to create comprehensive Reddit browsing experience}
+          \resumeItemListEnd
+          \vspace{-13pt}
+          
+      \resumeProjectHeading
+          {\textbf{Vyakhya AI} $|$ \emph{Flutter, Google ML Kit, Python, Firebase}}{January 2024 -- April 2024}
+          \resumeItemListStart
+            \resumeItem{Developed image-to-text translation application using Google ML Kit and Flutter by implementing OCR technology to process 1000 images per hour with 98 percent accuracy}
+            \resumeItem{Implemented real-time language translation across 500+ languages by integrating machine learning algorithms and translation APIs to enable multilingual text conversion}
+            \resumeItem{Contributed 10+ Pull Requests by implementing batch processing, multi-language support, and cloud synchronization features to enhance application functionality}
+            \resumeItem{Designed user-friendly interface by creating seamless image selection, text extraction, and translation workflow to improve user experience}
+          \resumeItemListEnd 
+          \vspace{-13pt}
+          
+      \resumeProjectHeading
+          {\textbf{AI Assistant} $|$ \emph{Flutter, GPT API, Hive, Git}}{November 2023 -- January 2024}
+          \resumeItemListStart
+            \resumeItem{Created AI-powered chatbot application using Flutter and ChatGPT API by integrating natural language processing to provide intelligent conversational interactions and text-to-image generation}
+            \resumeItem{Decreased query resolution time by 40 percent by optimizing API integration and implementing efficient response handling to improve user experience}
+            \resumeItem{Merged 15+ Pull Requests by adding multi-language support, conversation history, and Hive database storage to enhance application features and data persistence}
+            \resumeItem{Implemented voice input, text formatting, and image generation features by using Flutter plugins and GPT API to create comprehensive AI assistant experience}
+          \resumeItemListEnd 
+          \vspace{-13pt}
+          
+      \resumeProjectHeading
+          {\textbf{Wallter - Wallpaper Application} $|$ \emph{React, Node.js, API Integration}}{2024}
+          \resumeItemListStart
+            \resumeItem{Developed modern wallpaper application by implementing responsive design and API integration to provide curated collections, search functionality, and high-quality image downloads}
+          \resumeItemListEnd 
+          \vspace{-13pt}
+          
+      \resumeProjectHeading
+          {\textbf{Apni Dukan - E-commerce Platform} $|$ \emph{Flutter, Firebase, Payment Integration}}{2024}
+          \resumeItemListStart
+            \resumeItem{Built complete e-commerce solution for local businesses by implementing inventory management, order processing, and customer management features to streamline business operations}
+          \resumeItemListEnd 
+          \vspace{-13pt}
+          
+      \resumeProjectHeading
+          {\textbf{WorkItOut - Fitness Tracking App} $|$ \emph{Flutter, Firebase, Local Storage}}{2023}
+          \resumeItemListStart
+            \resumeItem{Created comprehensive fitness tracking application by implementing workout planning, progress monitoring, and social features to help fitness enthusiasts track their goals}
+          \resumeItemListEnd 
+          \vspace{-13pt}
+          
+      \resumeProjectHeading
+          {\textbf{CaptionIt - Social Media Tool} $|$ \emph{Flutter, AI API, Firebase}}{2023}
+          \resumeItemListStart
+            \resumeItem{Developed AI-powered caption generation tool by integrating machine learning APIs to provide hashtag suggestions and content optimization for social media posts}
+          \resumeItemListEnd 
+          \vspace{-13pt}
+          
+      \resumeProjectHeading
+          {\textbf{Nimbus - Weather Application} $|$ \emph{Flutter, Weather API, Geolocation}}{2023}
+          \resumeItemListStart
+            \resumeItem{Built advanced weather forecasting application by integrating weather APIs and geolocation services to provide detailed meteorological data and location-based forecasts}
+          \resumeItemListEnd 
+          \vspace{-13pt}
+          
+      \resumeProjectHeading
+          {\textbf{Vihan - Communication Platform} $|$ \emph{Flutter, Firebase, WebRTC}}{2023}
+          \resumeItemListStart
+            \resumeItem{Created real-time communication platform by implementing WebRTC and Firebase to provide messaging, voice calls, and collaboration features for team productivity}
+          \resumeItemListEnd 
+          
+    \resumeSubHeadingListEnd
+\vspace{-15pt}
+
+\section{Certifications}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Open Source Best Practices}{: Calin Global Services Pvt. Ltd. -- 2025} \\
+     \textbf{Flutter and Dart - The Complete Guide}{: Udemy -- 2023} \\
+     \textbf{Web Design and Development}{: Online Certification -- 2022}
+    }}
+\end{itemize}
+\vspace{-16pt}
+
+\section{Achievements and Recognition}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Competitive Programming}{: Solved 1100+ Data Structures and Algorithms problems across LeetCode, HackerRank, and GeeksforGeeks platforms with consistent 650+ day coding streak demonstrating dedication to continuous learning} \\
+     \textbf{Open Source Contributions}{: Contributed to 10+ open source projects with 100+ successful Pull Requests and maintained 150+ day GitHub contribution streak showcasing commitment to collaborative development} \\
+     \textbf{Hackathon Success}{: Achieved Grand Finalist status in Smart India Hackathon and won 2 institute-level hackathons demonstrating innovation and teamwork capabilities} \\
+     \textbf{Ubuntu Touch Developer}{: Certified by Calin Global Services validating expertise in specialized mobile development platform} \\
+     \textbf{Technical Leadership}{: Served as Developer Lead in D4 Community mentoring junior developers and organizing technical workshops to foster collaborative team environments}
+    }}
+\end{itemize}
+\vspace{-16pt}
+
+\section{Leadership and Community Involvement}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Developer Lead}{Ongoing}
+      {D4 Community}{Remote}
+      \resumeItemListStart
+        \resumeItem{Led team of junior developers in software development projects by providing mentorship, code reviews, and technical guidance to foster collaborative and high-performance team environment}
+        \resumeItem{Contributed to Ubuntu Touch Development Course curriculum creation by establishing comprehensive learning materials for new developers to help train development community}
+        \resumeItem{Organized and facilitated technical workshops and coding bootcamps by designing hands-on sessions for community members to promote knowledge sharing and skill development}
+        \resumeItem{Maintained active engagement in open source communities by promoting best practices and collaborative development approaches to support developer ecosystem}
+      \resumeItemListEnd
+    
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+\section{Coding Profiles and Online Presence}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{GitHub}{: github.com/suraj-yadav0 -- 150+ day contribution streak, 10+ repositories, 100+ contributions} \\
+     \textbf{LeetCode}{: leetcode.com/u/Suraj\_Yadav07 -- 1100+ problems solved, consistent daily practice} \\
+     \textbf{HackerRank}{: hackerrank.com/profile/\_2129753 -- Multiple certifications in algorithms and data structures} \\
+     \textbf{GeeksforGeeks}{: geeksforgeeks.org/user/0surajyadav0 -- Active contributor with coding solutions} \\
+     \textbf{Portfolio}{: suraj-yadav-second-portfolio.vercel.app -- Comprehensive showcase of projects and achievements}
+    }}
+\end{itemize}
 
 \vfill
 \center{\footnotesize Last updated: \today}
