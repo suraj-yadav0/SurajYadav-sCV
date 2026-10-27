@@ -27,8 +27,8 @@
 \addtolength{\oddsidemargin}{-0.55in}
 \addtolength{\evensidemargin}{-0.55in}
 \addtolength{\textwidth}{1.1in}
-\addtolength{\topmargin}{-.7in}
-\addtolength{\textheight}{1.45in}
+\addtolength{\topmargin}{-.65in}
+\addtolength{\textheight}{1.35in}
 
 \urlstyle{same}
 
@@ -38,8 +38,8 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-7pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+  \vspace{-5pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-3pt}]
 
 % Ensure that generated pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -56,14 +56,14 @@
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textbf{\small #2} \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-6pt}
+    \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & \textbf{\small #2}\\
-    \end{tabular*}\vspace{-6pt}
+    \end{tabular*}\vspace{-5pt}
 }
 
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
@@ -72,7 +72,7 @@
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, noitemsep, topsep=0pt]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
 
 \begin{document}
 
@@ -97,7 +97,7 @@
      \textbf{Tools \& Platforms}{: Linux (Ubuntu, Ubuntu Touch), Git, Docker, Clickable CLI, ONNX Runtime, REST APIs, CI/CD}
     }}
 \end{itemize}
-\vspace{-17pt}
+\vspace{-16pt}
 
 \section{Professional Experience}
   \resumeSubHeadingListStart
@@ -128,12 +128,11 @@
   \resumeSubHeadingListStart
 
     \resumeProjectHeading
-      {\textbf{Quantro -- Smart Finance Manager} $|$ \emph{Flutter, Drift SQLite, Riverpod, Firebase} $|$ \href{https://money-manager-eight-nu.vercel.app}{\underline{Live Demo}} $|$ \href{https://github.com/suraj-yadav0/money_manager}{\underline{Code}}}{2025}
+      {\textbf{Quantro -- Smart Finance} $|$ \emph{Flutter, Drift SQLite, Riverpod, Firebase} $|$ \href{https://money-manager-eight-nu.vercel.app}{\underline{Demo}} $|$ \href{https://github.com/suraj-yadav0/money_manager}{\underline{Code}}}{2025}
       \resumeItemListStart
         \resumeItem{Architected local-first finance app delivering sub-5ms transaction search queries by designing type-safe compiled Drift SQLite DAOs with compound indexing on transaction timestamps.}
         \resumeItem{Parsed 200+ Indian banking SMS formats (UPI, NEFT, IMPS) with zero UI frame drops by offloading automated regex tokenization to a dedicated background Dart isolate, backed by Firestore delta sync.}
       \resumeItemListEnd
-      \vspace{-14pt}
 
     \resumeProjectHeading
       {\textbf{utgpt -- On-Device AI Assistant} $|$ \emph{QML, Python, llama.cpp, GGUF, Lomiri} $|$ \href{https://open-store.io/app/utgpt.surajyadav}{\underline{OpenStore}} $|$ \href{https://github.com/suraj-yadav0/utgpt}{\underline{Code}}}{2025}
@@ -141,7 +140,6 @@
         \resumeItem{Published private on-device AI chat app on OpenStore, streaming local tokens without UI thread blocking by interfacing 4-bit quantized GGUF models (Qwen 2.5, SmolLM2) via async UNIX domain socket IPC.}
         \resumeItem{Guaranteed conversational privacy and zero telemetry by enforcing strict AppArmor sandbox confinement profiles on Ubuntu Touch.}
       \resumeItemListEnd
-      \vspace{-14pt}
 
     \resumeProjectHeading
       {\textbf{Tower Crash -- Helix Jump Arcade Game} $|$ \emph{QML, Qt Quick, JavaScript, SQLite} $|$ \href{https://open-store.io/app/tower-crash.surajyadav}{\underline{OpenStore}} $|$ \href{https://github.com/suraj-yadav0/tower-crash}{\underline{Code}}}{2025}
