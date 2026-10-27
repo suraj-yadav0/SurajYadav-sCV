@@ -1,25 +1,3 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-
 \documentclass[a4paper,11pt]{article}
 
 \usepackage{latexsym}
@@ -45,11 +23,12 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-\addtolength{\oddsidemargin}{-0.6in}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.19in}
-\addtolength{\topmargin}{-.7in}
-\addtolength{\textheight}{1.4in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-.65in}
+\addtolength{\textheight}{1.3in}
 
 \urlstyle{same}
 
@@ -57,12 +36,15 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
+% Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-6pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
 
+% Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
+% Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
@@ -74,55 +56,45 @@
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textbf{\small #2} \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-6pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & \textbf{\small #2}\\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-6pt}
 }
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
 
 \begin{document}
 
 \begin{center}
-    {\Huge \scshape Suraj Yadav} \\ \vspace{1pt}
-    \small \raisebox{-0.1\height}\faMobile\ +91-7986068817 ~ 
-    \href{mailto:surajyadav200701@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  surajyadav200701@gmail.com} ~ 
-    \href{https://github.com/suraj-yadav0}{\raisebox{-0.2\height}\faGithub\ suraj-yadav0} ~
-    \href{https://suraj-yadav0.github.io/portfolio-v3/}{\raisebox{-0.2\height}\faGlobe\ Portfolio}
-    \vspace{-8pt}
+    {\Huge \scshape Suraj Yadav} \\ \vspace{2pt}
+    \small
+    \href{mailto:surajyadav200701@gmail.com}{\raisebox{-0.1\height}\faEnvelope\ surajyadav200701@gmail.com} ~|~
+    \raisebox{-0.1\height}\faMobile\ +91-7986068817 ~|~
+    \href{https://suraj-yadav0.github.io/portfolio-v4/}{\raisebox{-0.1\height}\faGlobe\ suraj-yadav0.github.io} ~|~
+    \href{https://github.com/suraj-yadav0}{\raisebox{-0.1\height}\faGithub\ suraj-yadav0} ~|~
+    \href{https://www.linkedin.com/in/suraj-yadav-a63b3b220}{\raisebox{-0.1\height}\faLinkedin\ suraj-yadav} ~|~
+    \href{https://leetcode.com/u/suraj_yadav07}{\raisebox{-0.1\height}\faCode\ leetcode/suraj\_yadav07}
+    \vspace{-6pt}
 \end{center}
-
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Chandigarh Engineering College}{Punjab, India}
-      {Bachelor of Technology in Computer Science -- CGPA: 8.52/10.0}{2021 -- 2025}
-      \resumeItemListStart
-        \resumeItem{Relevant Coursework: Data Structures and Algorithms, Software Engineering, Database Management Systems, Operating Systems, Computer Networks, Mobile Application Development}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
 
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Programming Languages}{: Python, JavaScript, QML, Dart, Java, C, C++, SQL, HTML, CSS} \\
-     \textbf{Frameworks and Libraries}{: Flutter, Ubuntu Touch, Android, React, Node.js, Express.js, Firebase, Material-UI, GetX} \\
-     \textbf{Databases}{: MongoDB, MySQL, SQLite, Firebase Firestore, Hive, Odoo} \\
-     \textbf{Developer Tools}{: Git, GitHub, Docker, VS Code, Android Studio, IntelliJ IDEA, Linux, Ubuntu, Postman, RESTful APIs, WordPress} \\
-     \textbf{Methodologies}{: Agile Development, Scrum, Test-Driven Development, CI/CD, Code Review, Open Source Development}
+     \textbf{Languages}{: Python, JavaScript, Dart, QML, C++, SQL, HTML5, CSS3} \\
+     \textbf{Frameworks \& Libraries}{: Flutter, Qt Quick, Lomiri, Next.js, React, Node.js, Express.js, Riverpod, GetX} \\
+     \textbf{Databases \& Storage}{: PostgreSQL, SQLite (Drift), Prisma ORM, MongoDB, Firebase Firestore, Redis} \\
+     \textbf{Tools \& Platforms}{: Linux (Ubuntu, Ubuntu Touch), Git, Docker, Clickable CLI, ONNX Runtime, REST APIs, CI/CD}
     }}
 \end{itemize}
 \vspace{-16pt}
@@ -134,155 +106,81 @@
       {Junior Software Engineer}{March 2025 -- Present}
       {CALIN Global Services India PVT LTD}{Kerala, India}
       \resumeItemListStart
-        \resumeItem{Developed mobile applications for Ubuntu Touch platform using QML, Python, and JavaScript to create cross-platform software solutions for enterprise clients}
-        \resumeItem{Built Time Management application with Odoo backend integration by implementing RESTful APIs and database synchronization to enable timesheet tracking, task management, and project updates across multiple server instances}
-        \resumeItem{Created Ubuntu Touch Development Course curriculum by designing training modules and documentation to train development teams on QML application development and best practices}
-        \resumeItem{Implemented user authentication systems using OAuth and JWT tokens by developing secure login workflows to protect user data and maintain session management}
-        \resumeItem{Collaborated with cross-functional teams using Agile methodologies by participating in daily standups and sprint planning to deliver software features on schedule}
+        \resumeItem{Engineered convergent Ubuntu Touch applications using QML, Qt Quick, and Python (PyOtherSide), sustaining 60 FPS rendering across handheld devices and 4K external desktop displays.}
+        \resumeItem{Architected Time Management app synchronizing with multi-server Odoo ERP instances via REST APIs, eliminating duplicate billing over unstable connections using an idempotent offline SQLite ledger with UUID keys.}
+        \resumeItem{Co-authored official Lomiri App Development Level 1 \& Level 2 engineering curricula and guides, training developer teams on QML application architecture, Clickable CLI workflows, and AppArmor sandboxing.}
+        \resumeItem{Secured client authentication by implementing OAuth 2.0 and JWT token lifecycles under strict AppArmor confinement profiles to prevent unauthorized network telemetry.}
+        \resumeItem{Merged 10 upstream merge requests into Dekko 2, Ubuntu Touch's flagship convergent email client, optimizing UI rendering and fixing layout convergence edge cases.}
       \resumeItemListEnd
 
     \resumeSubheading
       {App Developer Intern}{April 2024 -- August 2024}
       {NotAtMrp}{Remote}
       \resumeItemListStart
-        \resumeItem{Developed user interfaces for retail and consumer applications using Flutter and Dart by implementing responsive design patterns to create mobile experiences for e-commerce platform}
-        \resumeItem{Increased user engagement by 35 percent and reduced bounce rate by 25 percent by optimizing frontend performance and implementing GetX state management to improve application responsiveness}
-        \resumeItem{Improved app speed by 30 percent and reduced server response time by 20 percent by conducting performance profiling and eliminating backend bottlenecks to enhance user experience}
-        \resumeItem{Reduced user waiting time by 70 percent by implementing GetX state management library and optimizing data flow to improve code efficiency and application performance}
-        \resumeItem{Participated in code reviews by following coding standards and best practices to maintain high-quality codebase throughout development lifecycle}
+        \resumeItem{Accelerated application responsiveness by 30\% and cut user wait times by 70\% by migrating client state to GetX reactive architecture and implementing structured data-flow caching in Dart.}
+        \resumeItem{Decreased checkout bounce rate by 25\% and lifted user engagement by 35\% by redesigning retail checkout workflows with responsive Flutter UI components.}
+        \resumeItem{Reduced server round-trip latency by 20\% by conducting Flutter DevTools performance profiling and optimizing REST payload serialization.}
       \resumeItemListEnd
 
-  
-    
   \resumeSubHeadingListEnd
-\vspace{-16pt}
-
-\section{Projects}
-    \resumeSubHeadingListStart
-    
-     
-
-      \resumeProjectHeading
-          {\textbf{Reddit Client for Ubuntu Touch} $|$ \emph{QML, Python, JavaScript, Reddit API}$|$ \href{https://github.com/suraj-yadav0/memesapp}{GitHub}}{August 2025 -- Present}
-          \resumeItemListStart
-            \resumeItem{Developed native Reddit client application for Ubuntu Touch by integrating Reddit API and implementing QML interfaces to provide mobile-first user experience with post browsing and comment threading}
-            \resumeItem{Implemented touch-optimized UI/UX design by creating gesture controls and smooth navigation to enhance user experience on mobile devices}
-            \resumeItem{Built features including user authentication, subreddit management, post voting, and media viewing by using Python backend and QML frontend to create comprehensive Reddit browsing experience}
-          \resumeItemListEnd
-          \vspace{-13pt}
-          
-      \resumeProjectHeading
-          {\textbf{Vyakhya AI} $|$ \emph{Flutter, Google ML Kit, Python, Firebase} $|$ \href{https://suraj-yadav0.github.io/vyakhya_ai-main/}{Live Demo}}{January 2024 -- April 2024}
-          \resumeItemListStart
-            \resumeItem{Developed image-to-text translation application using Google ML Kit and Flutter by implementing OCR technology to process 1000 images per hour with 98 percent accuracy}
-            \resumeItem{Implemented real-time language translation across 500+ languages by integrating machine learning algorithms and translation APIs to enable multilingual text conversion}
-            \resumeItem{Contributed 10+ Pull Requests by implementing batch processing, multi-language support, and cloud synchronization features to enhance application functionality}
-            \resumeItem{Designed user-friendly interface by creating seamless image selection, text extraction, and translation workflow to improve user experience}
-          \resumeItemListEnd 
-          \vspace{-13pt}
-          
-      \resumeProjectHeading
-          {\textbf{AI Assistant} $|$ \emph{Flutter, GPT API, Hive, Git} $|$ \href{https://github.com/suraj-yadav0/ai_assistent}{GitHub}}{November 2023 -- January 2024}
-          \resumeItemListStart
-            \resumeItem{Created AI-powered chatbot application using Flutter and ChatGPT API by integrating natural language processing to provide intelligent conversational interactions and text-to-image generation}
-            \resumeItem{Decreased query resolution time by 40 percent by optimizing API integration and implementing efficient response handling to improve user experience}
-            \resumeItem{Merged 15+ Pull Requests by adding multi-language support, conversation history, and Hive database storage to enhance application features and data persistence}
-            \resumeItem{Implemented voice input, text formatting, and image generation features by using Flutter plugins and GPT API to create comprehensive AI assistant experience}
-          \resumeItemListEnd 
-          \vspace{-13pt}
-          
-      \resumeProjectHeading
-          {\textbf{Wallter - Wallpaper Application} $|$ \emph{React, Node.js, API Integration} $|$ \href{https://wallter.vercel.app/}{Live Demo}}{2024}
-          \resumeItemListStart
-            \resumeItem{Developed modern wallpaper application by implementing responsive design and API integration to provide curated collections, search functionality, and high-quality image downloads}
-          \resumeItemListEnd 
-          \vspace{-13pt}
-          
-      \resumeProjectHeading
-          {\textbf{Apni Dukan - E-commerce Platform} $|$ \emph{Flutter, Firebase, Payment Integration} $|$ \href{https://github.com/suraj-yadav0/apna_kiryana}{GitHub}}{2024}
-          \resumeItemListStart
-            \resumeItem{Built complete e-commerce solution for local businesses by implementing inventory management, order processing, and customer management features to streamline business operations}
-          \resumeItemListEnd 
-          \vspace{-13pt}
-          
-
-          
-      \resumeProjectHeading
-          {\textbf{CaptionIt - Social Media Tool} $|$ \emph{Flutter, AI API, Firebase} $|$ \href{https://github.com/suraj-yadav0/caption_it}{GitHub}}{2023}
-          \resumeItemListStart
-            \resumeItem{Developed AI-powered caption generation tool by integrating machine learning APIs to provide hashtag suggestions and content optimization for social media posts}
-          \resumeItemListEnd 
-          \vspace{-13pt}
-          
-      \resumeProjectHeading
-          {\textbf{Nimbus - Weather Application} $|$ \emph{Flutter, Weather API, Geolocation} $|$ \href{https://github.com/suraj-yadav0/nimbus}{GitHub}}{2023}
-          \resumeItemListStart
-            \resumeItem{Built advanced weather forecasting application by integrating weather APIs and geolocation services to provide detailed meteorological data and location-based forecasts}
-          \resumeItemListEnd 
-      
-          
-    
-          
-    \resumeSubHeadingListEnd
 \vspace{-15pt}
 
-\section{Certifications}
-\begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Open Source Best Practices}{: Calin Global Services Pvt. Ltd. -- 2025} \\
-     \textbf{Flutter and Dart - The Complete Guide}{: Udemy -- 2023} \\
-     \textbf{Web Design and Development}{: Online Certification -- 2022}
-    }}
-\end{itemize}
-\vspace{-16pt}
-
-\section{Achievements and Recognition}
-\begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Competitive Programming}{: Solved 1100+ Data Structures and Algorithms problems across LeetCode, HackerRank, and GeeksforGeeks platforms with consistent 650+ day coding streak demonstrating dedication to continuous learning} \\
-     \textbf{Open Source Contributions}{: Contributed to 10+ open source projects with 100+ successful Pull Requests and maintained 150+ day GitHub contribution streak showcasing commitment to collaborative development} \\
-     \textbf{Hackathon Success}{: Achieved Grand Finalist status in Smart India Hackathon and won 2 institute-level hackathons demonstrating innovation and teamwork capabilities} \\
-     \textbf{Ubuntu Touch Developer}{: Certified by Calin Global Services validating expertise in specialized mobile development platform} \\
-     \textbf{Technical Leadership}{: Served as Developer Lead in D4 Community mentoring junior developers and organizing technical workshops to foster collaborative team environments}
-    }}
-\end{itemize}
-\vspace{-16pt}
-
-\section{Leadership and Community Involvement}
+\section{Projects}
   \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Developer Lead}{Ongoing}
-      {D4 Community}{Remote}
+    \resumeProjectHeading
+      {\textbf{Quantro -- Smart Finance Manager} $|$ \emph{Flutter, Drift SQLite, Riverpod, Firebase} $|$ \href{https://money-manager-eight-nu.vercel.app}{\underline{Live Demo}} $|$ \href{https://github.com/suraj-yadav0/money_manager}{\underline{Code}}}{2025}
       \resumeItemListStart
-        \resumeItem{Led team of junior developers in software development projects by providing mentorship, code reviews, and technical guidance to foster collaborative and high-performance team environment}
-        \resumeItem{Organized and facilitated technical workshops and coding bootcamps by designing hands-on sessions for community members to promote knowledge sharing and skill development}
-        \resumeItem{Maintained active engagement in open source communities by promoting best practices and collaborative development approaches to support developer ecosystem}
+        \resumeItem{Architected local-first finance application delivering sub-5ms transaction search queries by designing type-safe compiled Drift SQLite DAOs with compound indexing on transaction timestamps.}
+        \resumeItem{Parsed 200+ Indian banking SMS formats (UPI, NEFT, IMPS) with zero UI frame drops by offloading automated regex tokenization to a dedicated background Dart isolate.}
+        \resumeItem{Eliminated cross-device data conflicts by implementing Firestore delta synchronization with vector clock conflict resolution across mobile and web clients.}
       \resumeItemListEnd
-    
-  \resumeSubHeadingListEnd
-\vspace{-16pt}
+      \vspace{-14pt}
 
-\section{Coding Profiles and Online Presence}
+    \resumeProjectHeading
+      {\textbf{utgpt -- On-Device AI Assistant} $|$ \emph{QML, Python, llama.cpp, GGUF, Lomiri} $|$ \href{https://open-store.io/app/utgpt.surajyadav}{\underline{OpenStore}} $|$ \href{https://github.com/suraj-yadav0/utgpt}{\underline{Code}}}{2025}
+      \resumeItemListStart
+        \resumeItem{Published private on-device AI chat app on OpenStore, streaming local tokens without UI thread blocking by interfacing 4-bit quantized GGUF models (Qwen 2.5, SmolLM2) via async UNIX domain socket IPC.}
+        \resumeItem{Guaranteed conversational privacy and zero telemetry by enforcing strict AppArmor sandbox confinement profiles on Ubuntu Touch.}
+      \resumeItemListEnd
+      \vspace{-14pt}
+
+    \resumeProjectHeading
+      {\textbf{Tower Crash -- Helix Jump Arcade Game} $|$ \emph{QML, Qt Quick, JavaScript, SQLite} $|$ \href{https://open-store.io/app/tower-crash.surajyadav}{\underline{OpenStore}} $|$ \href{https://github.com/suraj-yadav0/tower-crash}{\underline{Code}}}{2025}
+      \resumeItemListStart
+        \resumeItem{Published 100-level helix arcade game on OpenStore maintaining a steady 60 FPS by engineering lightweight polar coordinate collision algorithms and custom spring physics in JavaScript without heavy external physics engines.}
+        \resumeItem{Increased player retention by implementing dynamic combo superfall mechanics (smashing rings after 3+ consecutive drops) and offline SQLite checkpoint persistence.}
+      \resumeItemListEnd
+      \vspace{-14pt}
+
+    \resumeProjectHeading
+      {\textbf{Depth Clock -- 3D Wallpaper Neural Extension} $|$ \emph{JavaScript, GNOME Shell, ONNX Runtime, Python, Cairo} $|$ \href{https://github.com/suraj-yadav0/depth-clock}{\underline{Code}}}{2024 -- 2025}
+      \resumeItemListStart
+        \resumeItem{Engineered GNOME Shell desktop extension delivering iOS-style 3D depth effect wallpaper clocks by running local ONNX neural segmentation models to extract subject alpha masks from 1024x1024 image tensors.}
+        \resumeItem{Cut idle power consumption to near-zero by implementing minute-aligned redraw scheduling that bypasses Cairo canvas painting when time values remain unchanged.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+\vspace{-15pt}
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Chandigarh Engineering College}{Punjab, India}
+      {Bachelor of Technology in Computer Science and Engineering -- CGPA: 8.52 / 10.0}{2021 -- 2025}
+      \resumeItemListStart
+        \resumeItem{Relevant Coursework: Data Structures \& Algorithms, Operating Systems, Database Management Systems, Computer Networks, Software Engineering}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-15pt}
+
+\section{Honors \& Achievements}
 \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \href{https://github.com/suraj-yadav0}{\textbf{GitHub :}} 
-     150+ day contribution streak, 10+ repositories, 100+ contributions \\
-
-     \href{https://leetcode.com/u/Suraj_Yadav07}{\textbf{LeetCode :}} 
- 1100+ problems solved, consistent daily practice \\
-     \href{https://www.hackerrank.com/profile/_2129753}{\textbf{HackerRank :}} 
-     Multiple certifications in algorithms and data structures \\
-
-     \href{https://www.geeksforgeeks.org/user/0surajyadav0}{\textbf{GeeksforGeeks :}} 
-     Active contributor with coding solutions \\
-
-     \href{https://surajyadav.base44.app/}{\textbf{Portfolio :}} 
-     Comprehensive showcase of projects and achievements
+     \textbf{Competitive Programming}{: Solved 1,100+ DSA problems across LeetCode, HackerRank, and GeeksforGeeks; ranked in Top 6\% on LeetCode with an active 650+ day streak.} \\ \vspace{1pt}
+     \textbf{Open Source Impact}{: Maintained 118+ public GitHub repositories with 300+ merged PRs; awarded GitHub Pull Shark $\times$3 and Pair Extraordinaire $\times$2; merged 10 upstream MRs into Dekko 2.} \\ \vspace{1pt}
+     \textbf{Leadership \& Hackathons}{: Served as Developer Lead at D4 Community mentoring junior engineers and hosting technical workshops; Grand Finalist in Smart India Hackathon and winner of 2 institute hackathons.}
     }}
 \end{itemize}
-
-\vfill
-\center{\footnotesize Last updated: \today}
 
 \end{document}
