@@ -24,11 +24,11 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.0in}
-\addtolength{\topmargin}{-.65in}
-\addtolength{\textheight}{1.3in}
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.45in}
 
 \urlstyle{same}
 
@@ -38,16 +38,16 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-6pt}\scshape\raggedright\large\bfseries
+  \vspace{-7pt}\scshape\raggedright\large\bfseries
 }{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
+% Ensure that generated pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1 \vspace{-1.5pt}}
   }
 }
 
@@ -71,7 +71,7 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, noitemsep, topsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
 
 \begin{document}
@@ -92,12 +92,12 @@
 \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages}{: Python, JavaScript, Dart, QML, C++, SQL, HTML5, CSS3} \\
-     \textbf{Frameworks \& Libraries}{: Flutter, Qt Quick, Lomiri, Next.js, React, Node.js, Express.js, Riverpod, GetX} \\
+     \textbf{Frameworks \& UI}{: Flutter, Qt Quick, Lomiri, Next.js, React, Node.js, Express.js, Riverpod, GetX} \\
      \textbf{Databases \& Storage}{: PostgreSQL, SQLite (Drift), Prisma ORM, MongoDB, Firebase Firestore, Redis} \\
      \textbf{Tools \& Platforms}{: Linux (Ubuntu, Ubuntu Touch), Git, Docker, Clickable CLI, ONNX Runtime, REST APIs, CI/CD}
     }}
 \end{itemize}
-\vspace{-16pt}
+\vspace{-17pt}
 
 \section{Professional Experience}
   \resumeSubHeadingListStart
@@ -106,11 +106,10 @@
       {Junior Software Engineer}{March 2025 -- Present}
       {CALIN Global Services India PVT LTD}{Kerala, India}
       \resumeItemListStart
-        \resumeItem{Engineered convergent Ubuntu Touch applications using QML, Qt Quick, and Python (PyOtherSide), sustaining 60 FPS rendering across handheld devices and 4K external desktop displays.}
+        \resumeItem{Engineered convergent Ubuntu Touch applications using QML, Qt Quick, and Python (PyOtherSide), sustaining 60 FPS rendering across handheld mobile screens and 4K external desktop displays.}
         \resumeItem{Architected Time Management app synchronizing with multi-server Odoo ERP instances via REST APIs, eliminating duplicate billing over unstable connections using an idempotent offline SQLite ledger with UUID keys.}
-        \resumeItem{Co-authored official Lomiri App Development Level 1 \& Level 2 engineering curricula and guides, training developer teams on QML application architecture, Clickable CLI workflows, and AppArmor sandboxing.}
-        \resumeItem{Secured client authentication by implementing OAuth 2.0 and JWT token lifecycles under strict AppArmor confinement profiles to prevent unauthorized network telemetry.}
-        \resumeItem{Merged 10 upstream merge requests into Dekko 2, Ubuntu Touch's flagship convergent email client, optimizing UI rendering and fixing layout convergence edge cases.}
+        \resumeItem{Co-authored official Lomiri App Development Level 1 \& Level 2 engineering curricula, training developer teams on QML application architecture, Clickable CLI workflows, and AppArmor sandboxing.}
+        \resumeItem{Secured client authentication workflows with OAuth 2.0 and JWT token lifecycles under AppArmor confinement, while contributing 10 upstream merge requests into Ubuntu Touch's Dekko 2 email client.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -125,15 +124,14 @@
   \resumeSubHeadingListEnd
 \vspace{-15pt}
 
-\section{Projects}
+\section{Flagship Projects}
   \resumeSubHeadingListStart
 
     \resumeProjectHeading
       {\textbf{Quantro -- Smart Finance Manager} $|$ \emph{Flutter, Drift SQLite, Riverpod, Firebase} $|$ \href{https://money-manager-eight-nu.vercel.app}{\underline{Live Demo}} $|$ \href{https://github.com/suraj-yadav0/money_manager}{\underline{Code}}}{2025}
       \resumeItemListStart
-        \resumeItem{Architected local-first finance application delivering sub-5ms transaction search queries by designing type-safe compiled Drift SQLite DAOs with compound indexing on transaction timestamps.}
-        \resumeItem{Parsed 200+ Indian banking SMS formats (UPI, NEFT, IMPS) with zero UI frame drops by offloading automated regex tokenization to a dedicated background Dart isolate.}
-        \resumeItem{Eliminated cross-device data conflicts by implementing Firestore delta synchronization with vector clock conflict resolution across mobile and web clients.}
+        \resumeItem{Architected local-first finance app delivering sub-5ms transaction search queries by designing type-safe compiled Drift SQLite DAOs with compound indexing on transaction timestamps.}
+        \resumeItem{Parsed 200+ Indian banking SMS formats (UPI, NEFT, IMPS) with zero UI frame drops by offloading automated regex tokenization to a dedicated background Dart isolate, backed by Firestore delta sync.}
       \resumeItemListEnd
       \vspace{-14pt}
 
@@ -150,14 +148,6 @@
       \resumeItemListStart
         \resumeItem{Published 100-level helix arcade game on OpenStore maintaining a steady 60 FPS by engineering lightweight polar coordinate collision algorithms and custom spring physics in JavaScript without heavy external physics engines.}
         \resumeItem{Increased player retention by implementing dynamic combo superfall mechanics (smashing rings after 3+ consecutive drops) and offline SQLite checkpoint persistence.}
-      \resumeItemListEnd
-      \vspace{-14pt}
-
-    \resumeProjectHeading
-      {\textbf{Depth Clock -- 3D Wallpaper Neural Extension} $|$ \emph{JavaScript, GNOME Shell, ONNX Runtime, Python, Cairo} $|$ \href{https://github.com/suraj-yadav0/depth-clock}{\underline{Code}}}{2024 -- 2025}
-      \resumeItemListStart
-        \resumeItem{Engineered GNOME Shell desktop extension delivering iOS-style 3D depth effect wallpaper clocks by running local ONNX neural segmentation models to extract subject alpha masks from 1024x1024 image tensors.}
-        \resumeItem{Cut idle power consumption to near-zero by implementing minute-aligned redraw scheduling that bypasses Cairo canvas painting when time values remain unchanged.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
